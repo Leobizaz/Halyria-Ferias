@@ -7,6 +7,7 @@ public class Selecionar : MonoBehaviour
     public GameObject Icon;
     public GameObject Voltar;
     public string Funcao;
+    public GameObject popup;
 
     public static bool Bylogah = false;
     public static bool Ju = false;
@@ -14,9 +15,11 @@ public class Selecionar : MonoBehaviour
 
     void OnMouseOver()
     {
-        Icon.SetActive(true);
+        if(!TransitionCamera.locked)
+            Icon.SetActive(true);
         if (Input.GetMouseButtonDown(0))
         {
+            popup.SetActive(true);
             if (Funcao == "ClickBylougah")
             {
                 ClickBylougah();
