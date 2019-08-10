@@ -52,6 +52,14 @@ public class TransitionCamera : MonoBehaviour
             locked = true;
         }
 
+        if (Selecionar.Ilhas)
+        {
+            transitionSpeed = 1;
+            currentViewPos = views[4].transform.position;
+            currentViewRot = (views[4].transform.rotation).eulerAngles;
+            locked = true;
+        }
+
 
     }
 
@@ -67,7 +75,7 @@ public class TransitionCamera : MonoBehaviour
          //Mathf.LerpAngle(transform.rotation.eulerAngles.y, currentView.transform.rotation.eulerAngles.y, Time.deltaTime * transitionSpeed),
          //Mathf.LerpAngle(transform.rotation.eulerAngles.z, currentView.transform.rotation.eulerAngles.z, Time.deltaTime * transitionSpeed));
 
-        if (!Selecionar.Ju || !Selecionar.Bylogah || !Selecionar.Furry)
+        if (!Selecionar.Ju || !Selecionar.Bylogah || !Selecionar.Furry || !Selecionar.Ilhas)
         {
             if (!IsInvoking("Disable"))
             {

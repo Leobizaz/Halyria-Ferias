@@ -12,6 +12,7 @@ public class Selecionar : MonoBehaviour
     public static bool Bylogah = false;
     public static bool Ju = false;
     public static bool Furry = false;
+    public static bool Ilhas = false;
 
     void OnMouseOver()
     {
@@ -34,6 +35,11 @@ public class Selecionar : MonoBehaviour
             {
                 ClickFurry();
                 print("Furry");
+            }
+            if (Funcao == "ClickIlhas")
+            {
+                ClickIlhas();
+                print("Ilhas");
             }
         }
     }
@@ -59,11 +65,18 @@ public class Selecionar : MonoBehaviour
         Voltar.SetActive(true);
     }
 
+    public void ClickIlhas()
+    {
+        Ilhas = true;
+        Voltar.SetActive(true);
+    }
+
     public void ClickVoltar()
     {
         Voltar.SetActive(false);
         Bylogah = false;
         Ju = false;
         Furry = false;
+        Ilhas = false;
     }
 }
